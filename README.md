@@ -53,4 +53,4 @@ Contains the code for evaluating CroBo representations on the **Franka Kitchen**
 Contains the code for evaluating CroBo representations on the **DeepMind Control Suite (DMC)** benchmark. Evaluations cover both manipulation and locomotion tasks in a purely vision-based setting (no proprioceptive inputs).
 
 ### 4. `misc/`
-Contains behind-the-scenes notes and stories about this research — things that didn't make it into the paper for one reason or another. Motivations, dead ends, design decisions, and other context that shaped the work but lives outside the formal writing.
+Contains behind-the-scenes notes that didn't make it into the paper — including **Masking Ratio** and **Training Cost**.

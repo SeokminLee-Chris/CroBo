@@ -31,3 +31,23 @@ It's not ideal, but it's honest — and that's why this note exists.
 | 97.5% | 52.8 | 79.6 | 99.6 | 38.8 | 55.2 |
 
 95% hits a sweet spot — 97.5% starts to hurt performance, likely because too few visible patches remain to provide meaningful spatial context for reconstruction.
+
+---
+
+## Training Cost
+
+### VRAM Usage & 1 Epoch Time
+
+Training was done on **2× NVIDIA H200 GPUs** with a batch size of **1536**.
+
+| Backbone | VRAM per GPU | 1 Epoch Time |
+|:---:|:---:|:---:|
+| ViT-S | 14,430 MiB | ~22 min |
+| ViT-B | 20,856 MiB | ~22 min |
+| ViT-L | 41,910 MiB | ~22 min |
+
+### Why H200?
+
+VRAM usage alone doesn't tell the full story. With a batch size of 1536, the real bottleneck is **data loading**, not compute — which makes epoch time nearly identical across all backbone sizes.
+
+To saturate the data pipeline efficiently, we rely on **distributed training across 2 GPUs**. The H200's NVLink interconnect makes inter-GPU communication significantly faster than alternatives, which is critical at this batch size. We tested on H100s and observed a **~2.5× slowdown**, despite similar compute specs — the difference comes down to interconnect bandwidth and how aggressively it can feed the data pipeline.
