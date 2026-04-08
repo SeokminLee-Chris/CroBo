@@ -48,6 +48,4 @@ Training was done on **2× NVIDIA H200 GPUs** with a batch size of **1536**.
 
 ### Why H200?
 
-VRAM usage alone doesn't tell the full story. With a batch size of 1536, the real bottleneck is **data loading**, not compute — which makes epoch time nearly identical across all backbone sizes.
-
-To saturate the data pipeline efficiently, we rely on **distributed training across 2 GPUs**. The H200's NVLink interconnect makes inter-GPU communication significantly faster than alternatives, which is critical at this batch size. We tested on H100s and observed a **~2.5× slowdown**, despite similar compute specs — the difference comes down to interconnect bandwidth and how aggressively it can feed the data pipeline.
+Despite the increasing model size from ViT-S to ViT-L, the epoch time remains nearly constant, indicating that the training process is not compute-bound but instead limited by the data pipeline. In this regime, GPU utilization is constrained by factors such as data loading, preprocessing, and host-to-device transfer, rather than model complexity. As a result, scaling the backbone size does not lead to a noticeable increase in training time. We additionally observed a significant slowdown when using H100 GPUs under the same setup, suggesting that system-level factors — such as data throughput and inter-GPU communication efficiency — can have a substantial impact when the data pipeline is the primary bottleneck.
