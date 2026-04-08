@@ -42,9 +42,9 @@ Training was done on **2× NVIDIA H200 GPUs** with **Intel Xeon Platinum 8480C**
 
 | Backbone | VRAM per GPU | 1 Epoch Time |
 |:---:|:---:|:---:|
-| ViT-S | 14,430 MiB | ~22 min |
-| ViT-B | 20,856 MiB | ~22 min |
-| ViT-L | 41,910 MiB | ~22 min |
+| ViT-S | 14.1 GB | ~22 min |
+| ViT-B | 20.4 GB | ~22 min |
+| ViT-L | 40.9 GB | ~22 min |
 
 ### Analysis
 
