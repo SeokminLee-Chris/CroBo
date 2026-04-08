@@ -50,4 +50,4 @@ Training was done on **2× NVIDIA H200 GPUs** with **Intel Xeon Platinum 8480C**
 
 Despite the increasing model size from ViT-S to ViT-L, the epoch time remains nearly constant, suggesting that the training is unlikely to be compute-bound under the current setup. Instead, this behavior indicates a potential bottleneck in the data pipeline, including data loading, preprocessing, and host-to-device transfer. As a result, scaling the backbone size does not lead to a noticeable increase in training time.
 
-For reference, we observed that training became more than 2× slower under a different system configuration (e.g., H100 GPUs paired with Xeon Gold 6530 CPUs), despite GPU memory being sufficient in all cases. This suggests that factors beyond GPU memory capacity can significantly affect training efficiency.
+For reference, we observed that training became more than 2× slower under a different system configuration (e.g., H100 GPUs paired with Xeon Gold 6530 CPUs), despite GPU memory being sufficient in all cases.
