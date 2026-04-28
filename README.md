@@ -6,6 +6,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.13904-b31b1b?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2603.13904)
 [![Project Page](https://img.shields.io/badge/Project%20Page-CroBo-blue?style=flat&logo=github&logoColor=white)](https://seokminlee-chris.github.io/CroBo-ProjectPage/)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-CroBo-yellow?style=flat&logo=huggingface&logoColor=white)](https://huggingface.co/SeokminLee-Chris/CroBo)
 
 ---
 
